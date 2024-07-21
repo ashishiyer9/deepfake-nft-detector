@@ -1,13 +1,5 @@
 {
-  "scripts": {
-    "spawn": "node helia.js"
-  },
-  "type": "module",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "helia": "^4.2.4",
-    "http": "^0.0.1-security",
-    "path": "^0.12.7",
-    "url": "^0.11.3"
+    "http-server": "^14.1.1"
   }
 }
