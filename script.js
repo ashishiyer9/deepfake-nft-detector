@@ -42,27 +42,27 @@ document
 
 
 async function uploadToIPFS(blob) {
-  
 
-  const cid = await heliaFs.addFile({
+
+  const { cid } = await ipfs.add({
     content: blob,
   });
 
-  console.log("Successfully stored", cid.toString());
-  document.getElementById("result").innerText = `CID: ${cid.toString()}`;
+  console.log("Successfully stored", cid);
+  document.getElementById("result").innerText = `CID: ${cid}`;
 }
 
 
 const connect = async (e) => {
   try {
-    const http = KuboRpcClient.create('/ip4/127.0.0.1/tcp/5001')
+    const http = window.KuboRpcClient.create('/ip4/127.0.0.1/tcp/5001')
     const isOnline = await http.isOnline()
 
     if (isOnline) {
       ipfs = http;
     }
   }
-  catch(err) {
+  catch (err) {
     console.error(err.message)
   }
 }
