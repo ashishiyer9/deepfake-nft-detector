@@ -46,6 +46,9 @@ async function uploadToIPFS(blob) {
 
   const { cid } = await ipfs.add({
     content: blob,
+  }, {
+    cidVersion: 1,
+    hashAlg: 'sha2-256'
   });
 
   console.log("Successfully stored", cid);
