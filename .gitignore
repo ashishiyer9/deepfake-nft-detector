@@ -7,6 +7,10 @@ yarn-error.log*
 # Environment variables
 .env
 
+# Hardhat files
+/cache
+/artifacts
+
 # Logs
 logs
 *.log

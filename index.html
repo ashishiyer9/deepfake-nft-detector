@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image to Base64</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1></h1>
-      <input type="file" id="fileInput" accept="image/*" />
-      <button id="uploadButton">Upload Image</button>
-      <div id="result"></div>
-    </div>
-    <script src="https://unpkg.com/kubo-rpc-client/dist/index.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image to Base64</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1></h1>
+    <input type="file" id="fileInput" accept="image/*" />
+    <button id="uploadButton">Upload Image</button>
+    <button id="createNFT">Create NFT</button>
+    <button id="retrieveButton">Retrieve NFT</button>
+    <div id="result"></div>
+    <div id="NFT_status"></div>
+  </div>
+  <script src="https://unpkg.com/kubo-rpc-client/dist/index.min.js"></script>
+  <script src="js/ethers.js" type="application/javascript"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
