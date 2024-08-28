@@ -7,6 +7,7 @@
     "@nomiclabs/hardhat-ethers": "^2.2.1",
     "@nomiclabs/hardhat-etherscan": "^3.1.4",
     "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
     "ethers": "^5.7.2",
     "http-server": "^14.1.1"
   },
