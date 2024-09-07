@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract StakingRewards is Ownable {
+contract StakingRewards is Ownable, ReentrancyGuard {
     IERC20 public stakingToken; // Token to be staked
     IERC20 public rewardsToken; // Token used as rewards
 
@@ -33,7 +33,7 @@ contract StakingRewards is Ownable {
     }
 
     // Modifier to update rewards before state changes
-    modifier updateReward(address account) {
+    modifier updateReward(address account) onlyOwner {
         rewardPerTokenStored = rewardPerToken();
         lastUpdateTime = block.timestamp;
 
@@ -105,7 +105,7 @@ contract StakingRewards is Ownable {
     }
 
     // Emergency withdrawal of staking tokens (without rewards)
-    function emergencyWithdraw() external {
+    function emergencyWithdraw() external onlyOwner {
         uint256 stakedAmount = stakedBalances[msg.sender];
         require(stakedAmount > 0, "No staked tokens to withdraw");
 
